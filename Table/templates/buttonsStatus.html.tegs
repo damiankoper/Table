@@ -1,0 +1,12 @@
+<button class="settings-button status-button status-button-edit" type="button" title="Status">
+        <img src="{{path}}/img/progress-report.png" alt="Edytuj">
+    </button>
+<button class="settings-button status-button status-button-1" type="button" title="Zakończony" style="background-color:green;">
+        <img src="{{path}}/img/check.png" alt="Edytuj">
+    </button>
+<button class="settings-button status-button status-button-0" type="button" title="W trakcie" style="background-color:orange;">
+        <img src="{{path}}/img/clock.png" alt="Edytuj">
+    </button>
+<button class="settings-button status-button status-button--1" type="button" title="Odrzucony" style="background-color:red;">
+        <img src="{{path}}/img/close.png" alt="Edytuj">
+    </button>

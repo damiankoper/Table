@@ -1,0 +1,655 @@
+ .button-1, .button-2 {
+        background-color: #68a0dd;
+        border: #68a0dd solid 2px;
+        text-align: center !important;
+        display: inline-block;
+        padding: 1em;
+        color: white;
+        -moz-transition: all 0.15s ease-in-out;
+        -o-transition: all 0.15s ease-in-out;
+        -webkit-transition: all 0.15s ease-in-out;
+        transition: all 0.15s ease-in-out;
+        cursor: pointer;
+        font-weight: bold;
+        text-align: center;
+        box-sizing: border-box;
+        line-height:1em;
+    }
+body{
+    font-family: monospace;
+}
+.hide{
+    display: none;
+}
+.u_bar{
+    /*    padding: 0.25em;*/
+/*    width:calc(100% - 0.5em);*/
+    background-color: #d9d9d9;
+}
+.u_bar button{
+    margin:0.1em 0.5em;
+    padding:0.25em 0.5em;
+}
+table{
+    width:100%;
+    font-family: monospace!important;
+    border-collapse: collapse;
+}
+td{
+    position: relative;
+}
+td, th{
+    border-collapse: collapse;
+    border:1px solid black;
+    padding:0.5em;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    z-index: 0;
+}
+.last-com{
+    display: none;
+    position:absolute;
+    left:-0.5em;top:-0.5em;
+    width:calc(100% - 1px);
+    background-color: white;
+    padding:0.5em;
+    border-bottom: 2px solid black;
+}
+td >div.wrapper{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: top;
+    min-height:3em;
+    max-height:3em;
+    position:relative;
+}
+td:hover{
+    z-index: 1;
+}
+td:hover .last-com{
+    display: block;
+}
+td:hover >div.wrapper{
+    width:100%;
+    overflow: visible;
+    z-index: 2;
+
+}
+td div.wrapper2{
+    z-index: 3;
+}
+td:hover div.slidable.wrapper2{
+    background-color:white;
+    z-index: 3;
+    position:relative;
+    left:-0.5em;
+    top:-0.5em;
+    padding:0.5em;
+    width:calc(100% - 1px);
+    border-bottom:black 2px solid;
+}
+.elipse{
+    max-width:20px;
+}
+.elipse:not(.elipseempty):hover{
+    overflow: visible;
+}
+.elipse:not(.elipseempty):hover .wrapper{
+    background-color: white;
+    display: block;
+    max-width: none;
+    overflow: visible;
+    z-index: 2;
+    box-sizing:content-box;
+    position:absolute;
+    border-top:none;
+    border-left:none;
+    cursor: pointer;
+    left:0;top:0;
+    height:100%;
+    padding:0.5em;
+    width:auto;
+    border:1px solid black;
+}
+.elipse-edit{
+    word-break: break-all;
+}
+.admin-nowrap{
+    white-space: nowrap;
+}
+/*a{
+    color:black;
+    text-decoration:none;
+}*/
+.tel_link a{
+    padding-bottom: 100%;
+}
+.tel_link:hover{
+    background-color: rgba(0,255,0,0.1);
+}
+.more_info{
+    text-align: center;
+}
+.more_info button{
+    padding:0 1em;
+    margin:0 0.5em;
+
+}
+.noborder{
+    border:none;
+}
+.vertical-table{
+    border:none;
+    width:auto;
+}
+.vertical-table tr :first-child{
+    text-align: right;
+    white-space: nowrap;
+    font-weight: bold;
+}
+.vertical-table *{
+    border:none;
+}
+.more_info_content{
+    display:flex;
+    padding:1em;
+}
+.more_info_content >div{
+    flex:1;
+}
+.nowrap{
+    white-space: nowrap;
+}
+.slidable_info{
+    border-bottom: 5px #68a0dd solid;
+}
+.app-table{
+    //white-space: nowrap;
+    text-overflow:ellipsis;
+    vertical-align: top;
+}
+.nowrap{
+    white-space: nowrap;
+}
+.wniosek{
+    //width:100%;
+}
+.wniosek tr, .wniosek td{
+    //border:none!important;
+}
+.wniosek tr :first-child{
+    text-align: right;
+    font-weight: bold;
+    background-color: #d9d9d9;
+}
+.wniosek tr :last-child{
+    text-align: left;
+}
+th{
+    cursor:pointer;
+    background-color: #d9d9d9;
+    transition: all 0.1s;
+}
+th:hover{
+    background-color: #d0d0d0;
+}
+.padding{
+    padding: 1em 0;
+}
+p{
+    margin:0;
+}
+h1{
+    margin-top:0;
+    margin-bottom:10px;
+}
+.button-link{
+    margin:10px;
+    float:right;
+}
+.tright{
+    text-align: right;
+}
+.app-progress{
+    width:100%;
+}
+.app-progress th{
+    width:50px;
+    height:100px;
+    position:relative;
+    max-width: 50px;
+    line-height: 14px;
+    padding-bottom: 20px;
+    text-align: inherit;
+}
+.app-progress th div{
+    position:absolute;
+    transform-origin: left center;
+    transform: rotateZ(-90deg);
+    bottom:0;left:50%;
+    width:100px;
+
+}
+.app-progress tbody td{
+    position:relative;
+    text-align: center;
+}
+
+.app-progress input[type='checkbox'] + label:not(.normal){
+    position: absolute;
+    width:100%;
+    height:100%;
+}
+.app-progress form >div{
+    /*    display: flex;
+        align-items: center;
+        justify-content: flex-start;*/
+    padding: 1em 0;
+    display: inline-block;
+}
+.app-progress form >div input{
+    margin-left:1em;}
+.app-checklist{
+    display: inline-block;
+}
+.other{
+    display: flex;
+    align-items: center;
+    width:100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top:1em;
+}
+.other > *{
+    margin:0 1em;
+}
+.app-checklist{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.app-progress > :last-child{
+    padding-bottom: 2em;
+}
+.app-checklist >div{
+    height: 3em;
+    position: relative;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid black;
+    margin: 0 0.5em;
+}
+.app-checklist >div>label{
+    display: flex;
+    align-items: center;
+}
+.app-checklist >div>label > div{
+    padding:0.5em;
+    position:relative;
+}
+.app-checklist >div>label > div:first-child{
+    background-color: #d9d9d9;
+    border-radius: 3px;
+}
+.cl >div>div, .com>div{
+    width:100%;
+    /*    min-height: 3em;*/
+    position: relative;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid black;
+
+}
+.loading_text{
+    font-weight: normal;
+    margin:5px;
+}
+.refresh{
+    float: right;
+    padding: 0.25em;
+    margin: 0.5em;
+    width: 3em;
+    height: 3em;
+    background-color: #FFAB68!important;
+    border-color: #FFAB68!important;
+    transition: 0.3s all;
+}
+@keyframes rotateZ {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+.refresh-anim img{
+    animation: rotateZ 1s linear infinite;  
+}
+/*.subplan .cl >div:not(:first-child):hover{
+    background-color:rgba(0,0,255,0.01); 
+}*/
+.subplan .cl >div>div.slidable:hover  .cl_com_text, .subplan .com >div.slidable:hover .cl_com_text{
+    z-index:999;
+    border-bottom: 2px solid black;
+}
+.subplan .cl >div>div.slidable:hover,
+.subplan .cl >div>div.slidable:hover label{
+    overflow: visible;
+    background-color: white;
+}
+.subplan button img{
+    transition: 0.3s all;
+}
+.subplan .cl_com_text{
+    text-overflow:ellipsis;
+    overflow: hidden;
+    transition:all 0.08s;
+    
+}
+.cl_com_text{
+    min-height: 3em;
+}
+.subplan label{
+    max-height:3.5em;
+}
+.cl{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+        height:100%;
+}
+.cl >div{
+    width:100%;
+    
+}
+.cl >div{
+    margin-bottom:1em;
+/*    display: none;*/
+}
+
+.cl >div:last-child{
+    margin-top:2em;
+/*    display: none;*/
+}
+.cl >div>div>button, .com >div>button, .cl_com_main .add_button{
+    min-width:2.5em;
+    min-height: 2.5em;
+    max-width:2.5em;
+    max-height:2.5em;
+    padding:0.25em;
+    margin:0.25em;
+    z-index: 5;
+    box-sizing:border-box;
+}
+.cl_com_main .add_button{
+    float:right;
+    margin-right: 0;
+}
+.cl >div>div>label, .com >div>label{
+    display: flex;
+    align-items: center;
+    width:100%;
+    position: relative;
+    background-color: inherit;
+    overflow: hidden;
+}
+
+.com >div>label >div{
+    flex: 1;
+    align-self: stretch;
+    box-sizing: border-box;
+    padding:0.5em 0.5em 1.5em 0.5em;
+}
+
+.cl >div>div>label > div{
+    padding:0.5em;
+    position:relative;
+}
+.cl >div>div>label > div:last-child{
+    flex: 1;
+    align-self: flex-start;
+    box-sizing: border-box;
+    background-color: inherit;
+}
+
+.cl >div>div>label > div:first-child{
+    background-color: #d9d9d9;
+    border-radius: 3px;
+    background-color: inherit;
+}
+
+/*
+ .com >div>label{
+    display: block;
+    width:100%;
+}*/
+
+.cl_com_main div:focus{
+    outline: #68a0dd auto 1px;
+}
+
+.cl_com .header{
+    display: flex;
+    width:100%;
+    justify-content: space-between;
+    border:none;
+}
+.cl_com .header *{
+    flex:1;
+}
+.com_date{
+    position: absolute;
+    font-size: 0.75em;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    background: linear-gradient(to right, rgba(217,217,217,1) 0%,rgba(255,255,255,0) 90%);
+    padding:0px 0.5em 0.25em 0.5em!important;
+    z-index: 0;
+}
+
+.app-checklist >div>label > div:nth-child(2){
+    width:150px;
+}
+.app-checklist textarea{
+    font-family: monospace;
+    border-bottom: none;
+    height: 3.2em;
+}
+.app-checklist textarea:hover, .app-checklist textarea:focus{
+    background-color: rgba(0,255,0,0.1);
+}
+.contact_div > label{
+    display: initial;
+}
+.contact_div > :last-child {
+    display: none;
+}
+.contact_div select{
+    width:100%;
+    max-width: none;
+}
+.contact_div fieldset{
+    width:calc(100% - 2em);
+}
+.add_case fieldset{
+    display: inline-block;
+    margin-top: 0.5em;
+    vertical-align: top;
+}
+.add_case >label{
+    display: block;
+    margin-top: 0.5em;
+}
+.add_case textarea{
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+.add_case input[type='text']{
+    padding: 0.5em;
+    width:100%;
+    box-sizing: border-box;
+}
+.add_case{
+    width: 500px;
+}
+.flex-center{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+}
+.sm_buttons div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.sm_buttons button{
+    margin-right: 0.25em;
+    width: 2.5em;
+    height: 2.5em;
+    padding: 0.1em;
+    display: inline-block;
+}
+.editable input, .editable textarea{
+    width:100%;
+    height:100%;
+    font-family: monospace;
+}
+.sorter{
+    display: none;
+}
+.user_id{
+    cursor:pointer;
+}
+.cl_com_container{
+    margin:0 auto;
+}
+.cl_com_main{
+    width:100%;
+    display: flex;
+    font-family: monospace;
+}
+.cl_com{
+    flex:1;
+    padding:0.5em;
+}
+.cl_com label{
+    min-height:3em;
+    align-self: flex-end;
+}
+.cl_com h2{
+    margin:0;
+    text-align: center;
+}
+.zeroopacity{
+    opacity:0;
+}
+.slided{
+    background-color: rgba(104, 160, 221, 0.1)!important;
+}
+.kik_content{
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.kik_content > div{
+    flex:1;
+    width: auto!important;
+    margin:1em;
+}
+.checklist_main{
+    padding:0 1em;
+}
+.filter-div{
+    display: inline;
+    margin:0.1em 0.5em;
+    /*    background-color: #c9c9c9;*/
+    padding:0.1em 0.2em;
+}
+.filter-div:first-child{
+    margin-left: 0px;
+}
+
+/*###############PLAN###############*/
+
+.plan-main{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: monospace;
+}
+.subplan{
+    background-color: #d9d9d9;
+    margin:0.5em;
+    flex: 1 1 calc(25% - 1em);
+    max-width: calc(100% - 1em);
+    min-width: 100px;
+    margin-bottom:3em;
+    border:0px solid black;
+    border-radius: 3px;
+}
+.subplan-title{
+    background-color: #68a0dd;
+    color:white;
+        border:0px solid black;
+    border-radius: 3px;
+}
+.subplan-title p{
+    padding:2px;
+    padding-left:5px;
+}
+
+.subplan-title p:first-child{
+    font-size: 2em;
+}
+.subplan-title p:last-child{
+    font-size:0.8em;
+    font-weight: bold;
+}
+
+tr:not(.slidable_info) select{
+    border: 1px solid #ccc;
+    width: auto;
+    max-width: 200px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fafafa;
+    padding:0.25em;
+}
+tr:not(.slidable_info) td select{
+    max-width: 50px;
+}
+button{
+    border-radius: 3px;
+}
+
+
+.select-style select:focus {
+    outline: none;
+}
+@media only screen and (max-width:540px) {
+    .admin-bar
+    {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        overflow-y: scroll;
+        font-size: 1em;
+        white-space: pre;
+    }
+    .subplan{
+        max-width:100%;
+        flex: none;
+        margin:0;
+        margin-bottom:2em;
+    }
+}

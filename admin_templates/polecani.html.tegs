@@ -1,0 +1,5 @@
+{%extends "base.html.tegs"%}
+{%block add_meta%}<title>PKFO Admin - {{title}}</title> {%endblock%}
+{%block admin_main_content%}
+{{table}}
+{%endblock%}

@@ -1,0 +1,194 @@
+.clapp-container{
+    width:100%;
+padding: 1em;
+box-sizing: border-box;
+}
+.clapp-container .main-bar{
+    display:flex;
+    background-color: #eee;
+    padding:5px;
+    border-radius: 5px;
+    align-items: center;
+}
+.clapp-container .main-bar .title{
+    flex:1;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+}
+.clapp-container .main-bar .title p{
+    margin:2px;
+}
+.clapp-container .main-bar .buttons{
+    flex:0;
+    display: flex;
+    align-items: center;
+}
+
+.clapp-container .main-bar .buttons button{
+    margin-left: 5px;
+}
+.clapp-container .items{
+    columns: 3;
+}
+.clapp-container .items .item{
+    display: flex;
+        border-bottom: 1px solid #2f2e2e;
+        background-color:white;
+/*        transition: background-color 0.3s;
+*/        padding:5px;
+        padding-bottom: 0; 
+        margin-top: 0px;
+        border-radius: 5px;
+}
+.clapp-container .items .item label{
+    display: flex;
+    flex: 1;
+    background-color: inherit;
+}
+.clapp-container .items .item .cb{
+    position:relative;
+    width:2.5em;
+    height:2.5em; 
+    margin:0.25em;
+    margin-left: 0;
+}
+.clapp-container .items .item .cb input.app-cb{
+    position: relative;
+    top:30%;
+    left:30%;
+    z-index: 2;
+    margin:0;
+}
+.clapp-container .items .item .cb input + div{
+    background-color: #ddd;
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0;top:0;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.clapp-container .items .item .cb input.app-color-blue:checked + div{
+    background-color: #68a0dd;
+}
+
+.clapp-container .items .item .cb input.app-color-green:checked + div{
+    background-color: #69db74;
+}
+.clapp-container .items .item .text{
+    flex:1;
+    background-color: inherit;
+    position: relative;
+    overflow: hidden;
+    height: 3em;
+/*    transition: all 0.3s;
+*/
+}
+.clapp-container .items .item .buttons{
+    align-items: center;
+    display: flex;
+}
+.clapp-container .items .item .buttons button{
+    margin-left: 5px;
+}
+.clcom-check{
+    display: none;
+}
+
+.clapp-container .items .item .text .wrapper{
+    position: relative;
+    padding:5px;
+    background-color: inherit;
+    overflow: visible;
+/*    transition: 0.3s background-color;
+*/    border-radius: 3px;
+}
+.clapp-container .items .item .text:hover {
+    overflow: visible;
+    z-index: 2;
+}
+.clapp-container .items .item .text:hover .wrapper{
+    box-sizing: border-box;
+    position:absolute;
+    overflow: visible;
+    z-index: 2;
+    border-bottom:2px solid black; 
+    left:0px;
+    right:0px;
+    bottom:initial;
+    top:initial;
+    min-height:100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: none;
+/*    background-color: #f5f5f5;
+*/
+}
+.clapp-container .items .item .text.com,
+.clapp-container .items .item .text.com:hover
+.clapp-container .items .item .text.noexpand,
+.clapp-container .items .item .text.noexpand:hover {
+    overflow: visible;
+}
+.clapp-container .items .item .text.com .wrapper,
+.clapp-container .items .item .text.com:hover .wrapper
+.clapp-container .items .item .text.noexpand .wrapper,
+.clapp-container .items .item .text.noexpand:hover .wrapper{
+    box-sizing: border-box;
+    position:relative;
+    overflow: visible;
+    z-index: 1;
+    left:0px;right:0px;
+    bottom:initial;
+    top:initial;
+    border-bottom:initial; 
+    min-height:auto;
+    border-bottom-left-radius: initial;
+    border-bottom-right-radius: initial;
+    box-shadow:none;
+}
+.main-bar.clcom-scheduled-slider{
+    margin-top: 1em;
+}
+.clapp-container .clcom-scheduled-slider{
+    display: flex;
+}
+.dpicker{
+    width:0;
+    height:0;
+}
+.clapp-container .items .item.no-items{
+    display: none;
+}
+.flex{
+    display: flex!important;
+}
+.clapp-container .items .item .text.com{
+    height:auto;
+    min-height: 3em;
+}
+.clapp-container .items .item .text.com .wrapper{
+    height:auto;
+    margin-bottom: 1em;
+}
+.clapp-container .items .item .text .date{
+    font-size: 0.75em;
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    background:  linear-gradient(to right, rgba(238,238,238,0),rgba(239,239,239,1) 10%,rgba(255,255,255,0) 100%);
+    padding:0px 0.5em 0.25em 1em!important;
+}
+.clapp-container .number {
+    display: flex;
+    align-items: center;
+}
+.clapp-container textarea{
+    resize: none;
+    flex:1;
+    height:100%;
+    align-self: stretch;
+    max-height: 3em;
+}

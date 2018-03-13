@@ -1,0 +1,123 @@
+.kik-main-info, .kik-main-kik{
+    padding:1em;
+    box-sizing: border-box;
+    width:100%;
+}
+.kik-m-i-container{
+    display: flex;
+}
+.kik-m-i-c-col > div{
+    display: flex;
+    justify-content: flex-end;
+}
+.kik-m-i-c-col > div > :first-child{
+    font-weight: bold;
+    width: 100px;
+    text-align: right;
+}
+.kik-m-i-c-col > div > :last-child{
+    min-width: 100px;
+    flex:1;
+    display: flex;
+    align-items: flex-end;
+}
+.kik-m-i-c-col > div >div{
+    padding:0.5em;
+}
+
+/* ##################### */
+.kik-main-kik div{
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+}
+.kik-main-kik{
+    display: flex;
+    justify-content: center;
+}
+.kik-col{
+    flex:1;
+    box-sizing: border-box;
+}
+.kik-col-kik{
+    display: flex;
+    box-sizing: border-box;
+    border-bottom: 1px solid #bbb;
+}
+.kik-col-title, .kik-m-i-title{
+    width:100%;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: #eee;
+    text-align: center;
+    padding: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 1px solid #bbb;
+}
+.kik-col:nth-child(2){
+    margin:0 10px;
+}
+.kik-col-kik > div{
+    padding: 0.5em;
+    width:100%;
+}
+.kik-col-kik > div:first-child{
+    min-width:200px;
+    max-width: 200px;
+    width:200px;
+    align-self: stretch;
+    background-color: #eee;
+    font-weight: bold;
+    text-align: right;
+
+}
+.kik-m-i-title{
+    display: flex;
+    align-items: center;
+    border-bottom: none;
+}
+.kik-m-i-title >p {
+    flex: 1;
+    margin:0;
+}
+.kik-m-i-title >button{
+    margin:0 3px;
+}
+.kik-m-i-c-col .autocomplete{
+    display: none;
+    min-width: 300px;
+}
+.kik-m-i-c-col .autocomplete .visible{
+    z-index: 100;
+}
+.kik-m-i-c-col .autocomplete-list{
+
+    z-index: 200;
+}
+.zap-cb{
+    display: none;
+}
+.zap-input{
+    max-width: 300px;
+    transition: 0.3s all;
+}
+.zap-cb + div{
+    text-align: center;
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    height: 2em;
+    padding: 0 5px;
+    margin:5px 0;
+    margin-right:1em;
+}
+.zap-cb:checked + div{
+    background-color: #86b3e4;
+    font-weight: bold;
+    color:white;
+}
+.zap-container{
+    align-items: center;
+}

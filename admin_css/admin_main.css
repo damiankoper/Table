@@ -1,0 +1,87 @@
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+    .admin-bar{
+        overflow-x: scroll;
+    }
+    .subplan{
+        max-width:100%;
+        flex: none;
+        margin:0;
+        margin-bottom:2em;
+    }
+}
+.u_bar{
+    padding-left:0.5em;
+}
+body{
+    margin:0;
+    padding: 0;
+}
+.admin-bar{
+    width:100%;
+    display:flex;
+    padding:0.5em;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+.admin-bar a{
+    flex:1;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    height:2.5em;
+    background-color: #68a0dd;
+    margin:0.1em;
+    color:white;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-align: center;
+    padding:0.1em;
+}
+.admin-bar a:first-child{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.admin-bar a:last-child{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.admin-bar a:hover{
+    font-weight: bold;
+
+}
+.login-form{
+    font-family: monospace;
+}
+.login-form p {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+form.login-form, .center {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.login-form fieldset {
+    display: flex;
+    flex-direction: column;
+}
+.login-form   fieldset * {
+    margin: 0.5em 0;
+}
+.login-form input , .center *{
+    width: 100%;
+}
+.login-form input:not(.button-1){
+    border:1px#aaa solid;
+    padding:0.5em;
+    box-sizing: border-box;
+}
+.login-form legend{
+    font-size: 1.5em;
+}
+

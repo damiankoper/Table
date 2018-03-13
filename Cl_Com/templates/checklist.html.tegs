@@ -1,0 +1,98 @@
+<div class="clcom-container" data-type="cl" data-target="{%if aw%}aw{%endif%}">
+    <div class="main-bar">
+        <div class="title">
+            <p>Checklista</p>
+        </div>
+        <div class="buttons">
+            <button class="clcom-add settings-button" type="button" title="Opcje">
+                    <img src="Table/img/add_white.png" alt="Dodaj">
+            </button>
+            <button class="clcom-reload settings-button" type="button" title="Opcje">
+                    <img src="Table/img/reload.png" alt="Odśwież">
+            </button>
+            <button class="clcom-scheduled settings-button" type="button" title="Opcje">
+                    <img src="Table/img/down-arrow.png" alt="Planowa CL">
+            </button>
+        </div>
+    </div>
+    <div class="items">
+        {%foreach items.now as item%}
+        <div class="item">
+            <label>
+                <div class="cb">
+                    <input data-no="{{item.no}}" data-date="{{item.date}}" type="checkbox" {%if item.checked%}checked{%endif%}>
+                    <div></div>
+                </div>
+                <div class="text">
+                    <div class="wrapper">{{item.text|e|r}}</div>
+                </div>
+            </label>
+            <div class="buttons">
+                <button class="clcom-check settings-button" type="button" title="Opcje">
+                    <img src="Table/img/check.png" alt="Zapisz">
+                </button>
+                <button class="clcom-edit settings-button" type="button" title="Opcje">
+                    <img src="Table/img/edit.png" alt="Edytuj">
+                </button>
+                <button class="clcom-remove settings-button" type="button" title="Opcje">
+                    <img src="Table/img/remove.png" alt="Usuń">
+                </button>
+            </div>
+        </div>
+        {%endforeach%} {%if items.now|length != "0"%}
+        <div class="item no-items">
+            {%endif%} {%else%}
+            <div class="item no-items" style="display:flex">
+                {%endelse%}
+                <div class="text noexpand">
+                    <div class="wrapper">Brak punktów</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="main-bar clcom-scheduled-slider" style="display:none">
+            <div class="title">
+                <p>Checklista planowa</p>
+            </div>
+            <div class="buttons">
+                <button class="clcom-add settings-button" type="button" title="Opcje">
+                    <img src="Table/img/add_white.png" alt="Dodaj">
+            </button>
+            </div>
+        </div>
+        <div class="items clcom-scheduled-slider" style="display:none">
+            {%foreach items.scheduled as item%}
+            <div class="item" title="{{item.date}}">
+                <label>
+                <div class="cb">
+                    <input data-no="{{item.no}}" data-date="{{item.date}}" type="checkbox" {%if item.checked%}checked{%endif%}>
+                    <div></div>
+                </div>
+                <div class="text">
+                    <div class="wrapper">{{item.text}}</div>
+                </div>
+            </label>
+                <div class="buttons">
+                    <button class="clcom-check settings-button" type="button" title="Opcje">
+                    <img src="Table/img/check.png" alt="Zapisz">
+                </button>
+                    <button class="clcom-edit settings-button" type="button" title="Opcje">
+                    <img src="Table/img/edit.png" alt="Edytuj">
+                </button>
+                    <button class="clcom-remove settings-button" type="button" title="Opcje">
+                    <img src="Table/img/remove.png" alt="Usuń">
+                </button>
+                </div>
+            </div>
+            {%endforeach%} {%if items.scheduled|length != "0"%}
+            <div class="item no-items">
+                {%endif%} {%else%}
+                <div class="item no-items" style="display:flex">
+                    {%endelse%}
+                    <div class="text noexpand">
+                        <div class="wrapper">Brak punktów</div>
+                    </div>
+                </div>
+            </div>
+        </div>

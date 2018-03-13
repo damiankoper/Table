@@ -1,0 +1,46 @@
+<div class="clcom-container com-container" data-type="com">
+    <div class="main-bar">
+        <div class="title"><p>Komentarze</p></div>
+        <div class="buttons">
+            <button class="clcom-add settings-button" type="button" title="Opcje">
+                    <img src="Table/img/add_white.png" alt="Dodaj">
+            </button>
+            <button class="clcom-reload settings-button" type="button" title="Opcje">
+                    <img src="Table/img/reload.png" alt="Odśwież">
+            </button>
+        </div>
+    </div>
+    <div class="items">
+        {%foreach items as item%}
+        <div class="item">
+            <label>
+                <div class="text noexpand com">
+                    <div class="wrapper">{{item.text|e}}</div>
+                    <div class="date">{{item.date|e}}</div>
+                </div>
+            </label>
+            <div class="buttons">
+                <button class="clcom-check settings-button" type="button" title="Opcje">
+                    <img src="Table/img/check.png" alt="Zapisz">
+                </button>
+                <button class="clcom-edit settings-button" type="button" title="Opcje">
+                    <img src="Table/img/edit.png" alt="Edytuj">
+                </button>
+                <button class="clcom-remove settings-button" type="button" title="Opcje">
+                    <img src="Table/img/remove.png" alt="Usuń">
+                </button>
+            </div>
+        </div>
+        {%endforeach%}
+        {%if items|length != "0"%}
+        <div class="item no-items">
+        {%endif%}
+        {%else%}
+        <div class="item no-items" style="display:flex">
+        {%endelse%}
+                <div class="text">
+                    Brak komentarzy
+                </div>
+        </div>
+    </div>
+</div>

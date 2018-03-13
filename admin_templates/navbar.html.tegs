@@ -1,0 +1,13 @@
+<div class="admin-bar">
+    <a href="index.php">Plan</a>
+    <a href="polecani.php">Polecani klienci</a>
+    <a href="kontakty.php">Kontakty</a>
+    <a href="sprawy.php">Sprawy</a>
+    <a href="wnioski.php">Wnioski</a>
+    <a href="sm_zapisy.php?filter%5Bsm_signups.date%5D={{next_sm}}">Zapisy SM</a>
+    <a href="uzytkownicy.php" {%if user_alert%}style="background-color:red;"{%endif%}>Użytkownicy</a>
+    <a href="logout.php">Wyloguj się</a>
+</div>
+<div class="alert-bar" style="background-color: rgba(255,0,0,0.25);">
+<!--    <p>Nie edytować nowego KIKu</p>       -->
+</div>

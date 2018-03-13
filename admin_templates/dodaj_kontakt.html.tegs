@@ -1,0 +1,26 @@
+{%block admin_main_content%}
+
+<div class="centerer add_form-main">
+
+    <form class="add_form" method="post">
+        <h1>
+            Dodaj kontakt
+        </h1>
+        <input type="hidden" name="action" value="insert">
+        <div id="new">
+            <input name="contacts.name" type="text" placeholder="Imię" />
+            <input name="contacts.surname" type="text" placeholder="Nazwisko" />
+            <input name="contacts.email" type="text" placeholder="Email" />
+            <input name="contacts.phone" type="text" placeholder="Telefon" />
+            <input name="contacts.pesel" type="text" placeholder="PESEL" />
+            <input name="contacts.recom" type="text" placeholder="Z polecenia od" />
+        </div>
+        <div>
+            <input type="submit" value="Dodaj" />
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="../admin_scripts/jquery.scrollintoview.min.js"></script>
+<script type="text/javascript" src="../admin_scripts/autocomplete.js"></script>
+<script type="text/javascript" src="../admin_scripts/add_forms.js"></script>
+{%endblock%}

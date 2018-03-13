@@ -1,0 +1,268 @@
+
+.header > *{
+    border: 1px #2f2e2e solid;
+    border-top: 1px #2f2e2e solid!important;
+    border-left:none;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.header > :first-child{
+    border-top-left-radius: 5px;
+    border: 1px #2f2e2e solid;
+}
+.header > :last-child{
+    border-top-right-radius: 5px;
+    border: 1px #2f2e2e solid;
+    border-left: none;
+}
+
+.table-row:not(.header) > .cells> *{
+border: 1px #2f2e2e solid;
+border-left:none;
+border-top:none;
+}
+.table-row:not(.header)> .cells > :first-child{
+    border: 1px #2f2e2e solid;
+    border-top:none;
+}
+.table-row:not(.header) > .cells> *{
+border: 1px #2f2e2e solid;
+border-left:none;
+border-top:none;
+}
+
+.table-row:last-child > .cells > :first-child{
+    border-bottom-left-radius: 5px;
+}
+.table-row:last-child > .cells > :last-child{
+    border-bottom-right-radius: 5px;
+}
+
+    .table-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        box-sizing: border-box;
+        margin-top:1em;
+        margin-bottom: 5em;
+        overflow: visible;
+    }
+
+    .table-row{
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        transition: all 0.3s;
+        background-color: white;
+    }
+
+    .table-row > .cells, .header {
+        display: flex;
+        box-sizing: border-box;
+        align-items: stretch;
+        transition: all 0.3s;
+        will-change:height;
+        flex-direction: row;
+    }
+
+    .table-row .cells{
+        background-color: inherit;
+    }
+    .table-row > .cells > div {
+        box-shadow: 1px 0 0 0 #000, 
+            0 1px 0 0 #000, 
+            1px 1px 0 0 #000,  
+            1px 0 0 0 #000 inset, 
+            0 1px 0 0 #000 inset;  
+        padding:5px;
+        overflow: hidden;
+        box-sizing: border-box;
+        background-color: inherit;
+        transition: all 0.3s;
+        flex:1;
+    }
+    .table-row > .slidable-div{
+        border: 1px #2f2e2e solid;
+        border-top: none;
+        background-color: white;
+        display: none;
+        border-bottom: #68a0dd 5px solid;
+        padding-bottom: 3em;
+    }
+    .table-row .wrapper{
+        position:absolute;
+    }
+
+    .table-row >.cells> .noexpand,
+    .table-row >.cells> .noexpand:hover {
+        overflow: visible;
+    }
+    .table-row >.cells> .noexpand .wrapper,
+    .table-row >.cells> .noexpand:hover .wrapper{
+        box-sizing: border-box;
+        position:relative;
+        overflow: visible;
+        z-index: 1;
+        left:0px;right:0px;
+        bottom:initial;
+        top:initial;
+        border-bottom:initial; 
+        min-height:auto;
+        border-bottom-left-radius: initial;
+        border-bottom-right-radius: initial;
+        box-shadow:none;
+    }
+
+    .table-container .header > .width40,
+    .table-container .cells > .width40{
+        flex-basis:40px;
+        flex-grow: 0;
+        min-width: 40px;
+    }
+    .table-container .header > .width80,
+    .table-container .cells > .width80{
+        flex-basis:80px;
+        flex-grow: 0;
+        min-width: 80px;
+    }
+    .table-container .header > .width100,
+    .table-container .cells > .width100{
+        flex-basis:100px;
+        flex-grow: 0;
+        min-width: 100px;
+    }
+    .table-container .textright{
+        text-align: right!important;
+    }
+    .table-container .header > .hidden,
+    .table-container .cells > .hidden{
+        flex-basis:0px;
+        flex-grow: 0;
+        min-width: 0px;
+        overflow: hidden;
+        border-right: 0px;
+        box-sizing: border-box;
+    }
+    .table-container .slidable .wrapper,
+    .table-container .settings .wrapper{
+        box-sizing: border-box;
+        padding:2px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        justify-content: center;
+        overflow: visible;
+    }
+
+    .settings-button-bar{
+        position:absolute;
+        box-sizing: border-box;
+        z-index: -1;
+        background-color: #cedbe8;
+        border-radius: 5px;
+        right:0;
+        justify-content: center;
+        align-items: center;
+        opacity:0;
+        display: flex;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        pointer-events: none;
+    }
+    .settings-button-bar.visible{
+        opacity:1;
+        display: flex;
+        z-index: 2;
+        right:50px;
+        pointer-events: all;
+    }
+    .settings-button-bar button{
+        margin:3px;
+        width:28px;
+        height:28px;
+        z-index: 0;
+    }
+    .settings-button-bar .arrow_container{
+        position:relative;
+        height:100%;
+        display: flex;
+        align-items: center;
+        z-index: -1;
+    }
+    .settings-button-bar .arrow{
+        position:absolute;
+        background-color: #cedbe8;
+        transform: rotateZ(45deg);
+        width:15px;
+        height:15px;
+        left:-10px;
+    }
+    .editing{
+        background-color:#87ff8d!important;
+    }
+    .editing .wrapper{
+                cursor: text;
+    }
+    .nobg{
+        background-color: transparent!important;
+    }
+    .editable .wrapper{
+        white-space:pre-line;
+        
+    }
+    .edit-button-check{
+        display: none;
+    }
+    .heightauto{
+        height:auto!important;
+    }
+    .phone .wrapper{
+        text-overflow: ellipsis;
+        position: absolute!important;
+        top:0px;
+        bottom:0px;
+        right:0px;
+        left:0px;
+        cursor: pointer;
+    }
+    .phone {
+        max-width:100px!important;
+    }
+    .editing_row{
+        overflow: hidden;
+    }
+    .notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+.overflowhidden{
+    overflow:hidden!important;
+}
+.rotated{
+    transform: rotateZ(180deg);
+}
+.sorting-icon{
+    transition: all 0.3s;
+    overflow: hidden;
+}
+.table-row > .cells > div .last-com + *{
+    display: none;
+}
+.table-row > .cells > div:hover .last-com{
+ display: none;
+}
+.table-row > .cells > div:hover .last-com + *{
+    display: block
+}
+.status-button:not(.status-button-edit){
+    display: none;
+}
+.table-row .email.noexpand,
+.table-row .cash.noexpand{
+    overflow: hidden!important;
+}
+.table-row .email .wrapper{
+    word-wrap: break-word;
+}

@@ -1,0 +1,70 @@
+<div class="table-whole">
+    <link rel="stylesheet" type="text/css" href="{{path}}/css/table_control.css">
+    <link rel="stylesheet" type="text/css" href="{{path}}/css/table.css">
+    <link rel="stylesheet" type="text/css" href="{{path}}/css/jquery.datepick.css">
+    <link rel="stylesheet" type="text/css" href="{{path}}/../KIK/css/KIK.css">
+    <link rel="stylesheet" type="text/css" href="{{path}}/../Cl_Com/css/clcom.css">
+    <link rel="stylesheet" type="text/css" href="{{path}}/../Cl_App/css/clapp.css">
+    <link rel="stylesheet" type="text/css" href="{{path}}/../custom_style.css">
+    <link rel="stylesheet" type="text/css" href="/admin_css/add_forms.css" />
+    <link rel="stylesheet" type="text/css" href="/admin_css/autocomplete.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <div class="table-control-panel">
+        <div class="table-control-menu">
+            <div class="active">{{title}}</div>
+            <div>Filtracja</div>
+            <div>Ukryte kolumny</div>
+            {%if addForm%}
+            <div class="add-row">Dodaj</div>
+            {%endif%}
+        </div>
+        <div class="table-control-info">
+            <div class="info">
+                <div class="active">
+                    <div>Wierszy: <span class="rows-num">{{rows|length}}</span></div>
+                    <div>Filtracja: <span class="filter">{{implode(", ", filtered_by)}}</span></div>
+                    <div>Dodatkowe kolumny: <span class="additional">Brak</span></div>
+                </div>
+                <div class="filters">
+                    {%foreach filters as filter%}
+                    <div>
+                        <div>{{filter.name}}</div>
+                        <select class="{{filter.col-class}}" data-col="{{filter.col}}" data-name="{{filter.name}}">
+                            <option value="all">WSZYSTKIE</option>
+                            {%foreach filter.values as value%}
+                            <option value="{{value.val}}">{{value.text}}</option>
+                            {%endforeach%}
+                        </select>
+                    </div>
+                    {%endforeach%}
+                </div>
+                <div class="hidden-columns">
+                    {%foreach hidden as h%}
+                    <div>
+                        <input class="{{h.class}}" id="cb_{{h.class}}" data-class="{{h.class}}" data-name="{{h.name}}" type="checkbox" />
+                        <label for="cb_{{h.class}}" title="Pokaż/ukryj kolumnę">{{h.name}}</label>
+                    </div>
+                    {%endforeach%}
+                </div>
+            </div>
+            <div class="buttons">
+                {%if print%}
+                 <button class="settings-button print-button" type="button" title="Drukuj tabelę">
+                    <img src="{{path}}/img/printer.png" alt="Drukuj">
+                </button>
+                {%endif%}
+                <button class="settings-button reload-button" type="button" title="Odśwież tabelę">
+                    <img src="{{path}}/img/reload.png" alt="Edytuj">
+                </button>
+            </div>
+        </div>
+    </div>
+    {%if addForm%}
+        {{addForm}}
+    {%endif%}
+    {%include "table.html.tegs"%}
+    <script>
+        var path = "{{path}}";
+    </script>
+    <script src="{{path}}/scripts/notify.min.js"></script>
+</div>

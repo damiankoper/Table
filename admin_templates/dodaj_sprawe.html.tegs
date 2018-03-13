@@ -1,0 +1,69 @@
+{%block admin_main_content%}
+
+<div class="centerer add_form-main">
+
+    <form class="add_form" method="post">
+        <h1>
+            Dodaj polecanego
+        </h1>
+        <input type="hidden" name="action" value="insert">
+        <div class="col-flex">
+            <div>
+                <h4>Dział:</h4>
+                <div class="radio-buttons-row">
+                    <label for="s4"><input type="radio" name="cases.section" value="PKFO" id="s4" /><span>PKFO</span></label>
+                    <label for="s1"><input type="radio" name="cases.section" value="PKF" id="s1" /><span>PKF</span></label>
+                    <label for="s2"><input type="radio" name="cases.section" value="NR" id="s2" /><span>NR</span></label>
+                    <label for="s3"><input type="radio" name="cases.section" value="SM" id="s3" /><span>SM</span></label>
+                </div>
+            </div>
+            <div>
+                <h4>Oddelegowane do:</h4>
+                <div class="radio-buttons-row">
+                    <label for="sc1"><input type="radio" name="cases.seconded" value="Albert Ligman" id="sc1" /><span>Albert Ligman</span></label>
+                    <label for="sc2"><input type="radio" name="cases.seconded" value="Krzysztof Iwanow" id="sc2" /><span>Krzysztof Iwanow</span></label>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h4>Cel:</h4>
+            <textarea class="normal" rows="5" name="cases.description"></textarea>
+        </div>
+        <div>
+            <h4>Kontakt:</h4>
+            <div class="radio-buttons-row">
+                <label for="contact_if_1"><input type="radio" name="contact_if" value="new" id="contact_if_1" checked/><span>Nowy</span></label>
+                <label for="contact_if_2"><input type="radio" name="contact_if" value="old" id="contact_if_2" /><span>Obecny</span></label>
+                <label for="contact_if_3"><input type="radio" name="contact_if" value="none" id="contact_if_3" /><span>Brak</span></label>
+            </div>
+        </div>
+        <div id="new">
+            <h4>Nowy kontakt:</h4>
+            <input name="contacts.name" type="text" placeholder="Imię" />
+            <input name="contacts.surname" type="text" placeholder="Nazwisko" />
+            <input name="contacts.email" type="text" placeholder="Email" />
+            <input name="contacts.phone" type="text" placeholder="Telefon" />
+            <input name="contacts.pesel" type="text" placeholder="PESEL" />
+            <input name="contacts.recom" type="text" placeholder="Z polecenia od:" />
+        </div>
+        <div id="old">
+            <h4>Obecny kontakt:</h4>
+            <select id="find" name="cases.contact_id" data-placeholder="Szukaj kontaktu">
+                {%foreach contacts as contact%}
+                <option value="{{contact.id}}">{{contact.text}}</option>
+                {%endforeach%}
+            </select>
+        </div>
+        <div>
+            <h4>Termin - ma być zrobione do:</h4>
+            <input id="date" name="cases.date" type="text" placeholder="Data" />
+        </div>
+        <div>
+            <input type="submit" value="Dodaj" />
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="../admin_scripts/jquery.scrollintoview.min.js"></script>
+<script type="text/javascript" src="../admin_scripts/autocomplete.js"></script>
+<script type="text/javascript" src="../admin_scripts/add_forms.js"></script>
+{%endblock%}

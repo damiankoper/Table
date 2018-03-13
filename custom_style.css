@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+.table-container{
+    border-radius: 5px;
+    font-family: monospace;
+}
+.header > div{
+    background-color: #86b3e4;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    cursor: pointer;
+    flex: 1;
+}
+.header > div.sort:hover{
+    background-color:#68a0dd;
+}
+
+.table-row > .cells, .header{
+    height:3em;
+}
+.table-row > .cells > div {
+        box-shadow: none;
+        overflow:hidden;
+        padding:0px;
+        padding-bottom: 1px;
+        position: relative;
+        box-sizing: border-box;
+
+}
+.table-row .wrapper{
+    position: relative;
+    padding:5px;
+    background-color: inherit;
+}
+.table-row > .cells > div:hover {
+    overflow: visible;
+    z-index: 1;
+}
+.table-row > .cells > div:hover .wrapper{
+    box-sizing: border-box;
+    position:absolute;
+    overflow: visible;
+    z-index: 1;
+    border-bottom:2px solid black; 
+    left:0px;
+    right:0px;
+    bottom:initial;
+    top:initial;
+    min-height:100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+}
+.pkf{
+    background-color:#ffd1d1;
+}
+.pkfo{
+    background-color: #a9c8eb;
+}
+.nr{
+    background-color: #d1f5d1;
+}
+.sm{
+    background-color: #fdeba3;
+}
+.default-color{
+     background-color: white;
+}
+.settings-button{
+    background-color: #86b3e4;
+    transition: all 0.3s;
+    border:none;
+    border-radius: 5px;
+    padding:2px;
+    height:30px;
+    width:30px;
+}
+.settings-button:hover{
+    background-color: #68a0dd;
+}
+.settings-button img{
+    height:100%;
+    width:100%;
+    transition: 0.3s all;
+}
+@keyframes loading {
+    from {transform: rotateZ(0deg);}
+    to {transform: rotateZ(360deg);}
+}
+.loading{
+    animation-name: loading;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function:ease-in
+}
+.notifyjs-bootstrap-base{
+    font-family: monospace;
+    border-color: #2f2e2e!important;
+    border-width: 1px!important;
+}

@@ -1,0 +1,9 @@
+{%extends "base.html.tegs"%} {%block add_meta%}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="admin_php_old/admin.css">
+    <link rel="stylesheet" type="text/css" href="Table/css/jquery.datepick.css">
+<script src="admin_php_old/cl_com.js" type="text/javascript"></script>
+<script src="admin_php_old/admin-engine.js" type="text/javascript"></script>
+<script src="Table/scripts/jquery.plugin.min.js"></script>
+<script src="Table/scripts/jquery.datepick.min.js"></script>
+{%endblock%} {%block u_bar%} {{u_bar}} {%endblock%} {%block admin_main_content%} {{table}} {%endblock%}

@@ -1,0 +1,29 @@
+<div class="kik-main-kik">
+    <div class="kik-col">
+        <div class="kik-col-title">Dane osobowe</div>
+        {%foreach personal as item%}
+        <div class="kik-col-kik">
+            <div>{{item.name}}</div>
+            <div data-org="{{item.org}}" class="kik-editable">{{item.value}}</div>
+        </div>
+        {%endforeach%}
+    </div>
+    <div class="kik-col">
+        <div class="kik-col-title">Dane finansowe</div>
+        {%foreach financial as item%}
+        <div class="kik-col-kik">
+            <div>{{item.name}}</div>
+            <div data-org="{{item.org}}" class="kik-editable">{{item.value}}</div>
+        </div>
+        {%endforeach%}
+    </div>
+    <div class="kik-col">
+        <div class="kik-col-title">Aktywa i zobowiązania</div>
+        {%foreach debts as item%}
+        <div class="kik-col-kik">
+            <div>{{item.name}}</div>
+            <div data-org="{{item.org}}" class="kik-editable">{{item.value}}</div>
+        </div>
+        {%endforeach%}
+    </div>
+</div>

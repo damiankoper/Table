@@ -1,0 +1,33 @@
+<div class="table-container">{%spaceless%}
+{%if data%}
+    <div class="table-row header">
+        {%foreach headers as header%}
+        <div class="{{header.class}}">{{header.text}}<span class="sorting-icon"></span></div>
+        {%endforeach%}
+    </div>
+    {%foreach rows as row%}
+    <div class="table-row {{row.class}}">
+        <div class="cells">
+            {%foreach row.cells as cell%}
+            <div class="{{cell.class}}" data-orgname="{{cell.orgname}}" data-table="{{cell.table}}">
+                <div class="wrapper">{{cell.text}}</div>
+            </div>
+            {%endforeach%}
+        </div>
+        {%if row.slidable != "0"%}
+        <div class="slidable-div">
+            {{row.slidable}}
+        </div>
+        {%endif%}
+    </div>
+    {%endforeach%}
+{%endif%} {%else%} Brak danych {%endelse%}{%endspaceless%}
+</div>
+<script src="{{path}}/scripts/table.js"></script>
+<script src="{{path}}/scripts/buttons.js"></script>
+<script src="{{path}}/scripts/jquery.plugin.min.js"></script>
+<script src="{{path}}/scripts/jquery.datepick.min.js"></script>
+<script src="../admin_scripts/autocomplete.js"></script>
+<script src="{{path}}/../Cl_Com/scripts/clcom.js"></script>
+<script src="{{path}}/../Cl_App/scripts/clapp.js"></script>
+<script src="{{path}}/../KIK/scripts/KIK.js"></script>

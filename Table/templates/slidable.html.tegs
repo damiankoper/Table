@@ -1,0 +1,3 @@
+<button class="slidable-button settings-button" type="button" title="Opcje">
+    <img src="{{path}}/img/down-arrow.png" alt="Rozwiń">
+</button> 

@@ -1,0 +1,32 @@
+<div class="clapp-container" data-type="cl">
+    <div class="main-bar">
+        <div class="title"><p>Checklista wniosku</p></div>
+        <div class="buttons">
+            <button class="clcom-reload settings-button" type="button" title="Opcje">
+                    <img src="Table/img/reload.png" alt="Odśwież">
+            </button>
+        </div>
+    </div>
+    <div class="items">
+        {%foreach items as item%}
+        <div class="item">
+            <label>
+                <div class="number">{{item.number}}.</div>
+                <div class="cb">
+                    <input type="checkbox" name="{{item.id}}" class="app-color-{{item.color}} app-cb" {{item.checked}}>
+                    <div></div>
+                </div>
+                <div class="text noexpand">
+                    <div class="wrapper">{{item.text}}</div>
+                </div>
+                <textarea>{{item.textarea}}</textarea>
+            </label>
+            <div class="buttons">
+                <button class="clcom-check settings-button" type="button" title="Opcje">
+                    <img src="Table/img/check.png" alt="Zapisz">
+                </button>
+            </div>
+        </div>
+        {%endforeach%}
+    </div>
+</div>

@@ -1,0 +1,76 @@
+<div class="kik-main-info">
+    <div class="kik-m-i-title">
+        <p>Informacje ogólne</p>
+        <button class="settings-button kik edit-button-kik" type="button" title="Edytuj">
+        <img src="Table/img/edit.png" alt="Edytuj">
+    </button>
+        <button class="settings-button kik edit-button-check edit-button-submit-kik" type="button" title="Edytuj">
+        <img src="Table/img/check.png" alt="Edytuj">
+    </button>
+        <button class="settings-button kik edit-button-check edit-button-exit-kik" type="button" title="Edytuj">
+        <img src="Table/img/close.png" alt="Edytuj">
+    </button>
+    <button class="settings-button reload-button-kik" type="button" title="Ładowanie">
+        <img src="Table/img/reload.png" alt="Edytuj">
+    </button>
+    </div>
+    <div class="kik-m-i-container">
+        <div class="kik-m-i-c-col">
+            <div>
+                <div>Typ wnoisku:</div>
+                <div>{{type}}</div>
+            </div>
+            <div>
+                <div>Data dodania:</div>
+                <div>{{date}}</div>
+            </div>
+            <div class="userID">
+                <div>Dodający:</div>
+                <div class="kik-select-info">{{fullname}}</div>
+                <div>
+                    <select class="kik-select" id="user" data-placeholder="Szukaj">
+                        {%foreach accounts as contact%}
+                        <option class="{%if contact.id == userID%}selected{%endif%}" value="{{contact.id}}">{{contact.id}} | {{contact.text}}</option>
+                        {%endforeach%}
+                    </select>
+                </div>
+            </div>
+            <div class="connectedWith">
+                <div>Wniosek dodatkowego kredytobiorcy:</div>
+                <div class="kik-select-info">{{connectedWith}}</div>
+                <div>
+                    <select class="kik-select" id="cWith" data-placeholder="Szukaj">
+                        {%foreach cList as contact%}
+                        <option class="{%if contact.id == connectedWithID%}selected{%endif%}" value="{{contact.id}}">{{contact.id}} | {{contact.text}}</option>
+                        {%endforeach%}
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="kik-m-i-c-col">
+            <div>
+                <div>Cel:</div>
+                <div data-org="purpose" class="kik-editable">{{purpose}}</div>
+            </div>
+            <div>
+                <div>Kwota:</div>
+                <div data-org="amount" class="kik-editable">{{amount}}</div>
+            </div>
+            <div>
+                <div>Komentarz:</div>
+                <div data-org="comment" class="kik-editable">{{comment}}</div>
+            </div>
+            <div class="zap-container">
+                <div>Kwota rozdzielona:</div>
+                <div>
+                {%if zap %}
+                    <label><input type="checkbox" class="zap-cb"><div>ROZDZIEL</div></label>
+                    <input type="text" class="zap-input" style="display:none;" placeholder="Kwota">
+                {%endif%%}
+                {%else%}TAK
+                {%endelse%}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

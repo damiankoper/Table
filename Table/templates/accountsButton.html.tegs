@@ -1,0 +1,3 @@
+<button class="settings-button payment-button" type="button" title="Zakończ procedurę wypłaty prowizji">
+        <img src="{{path}}/img/payment-method.png" alt="Zakończ procedurę wypłaty prowizji">
+</button>
